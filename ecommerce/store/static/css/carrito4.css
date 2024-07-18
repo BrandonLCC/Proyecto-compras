@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Radio Canada Big", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+:root {
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+    --color-rojo: #f33c3c;
+
+    --fondo-div-padres: #cfcfcf;
+    --primer-color-empresa: rgb(1, 7, 3);
+    --sub-titulo: #3cf33c;
+    --tercer-color-empresa: #00ff00;
+    --text-shadow-1:#00ff00;
+}
+
+.logo {
+    width: 65px;
+    border-radius: 100%;
+    
+}
+
+/* NAVBAR       */
+.navbar {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+.navbar:hover {
+    background-color: #020b02;
+    
+}
+
+.navbar-brand, .nav-link {
+    color: var(--color-blanco);
+    text-align: center;
+}
+
+.navbar-brand:hover , .nav-link:hover {
+    background-color: #031003;
+    text-shadow: 5px 5px 5px 5px var(--text-shadow-1);
+    color: var(--tercer-color-empresa);
+    border-radius: 10px;
+}
+
+
+.carrito-padre {
+    display: flex;
+}
+
+
+
+.div-img {
+    background-color: beige;
+    overflow: hidden;
+    display: flex;
+}
+.zoom {
+    position: relative;
+    transition: transform 1s;
+
+}
+
+.zoom:hover {
+    transform:scale(1.5);
+    cursor:zoom-in;
+
+}
+
+/*LADO DERECHO*/
+.nombre-producto {
+    border-top-right-radius: 10px; 
+    background: var(--color-negro);
+    color: var(--color-blanco);
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+    
+}
+
+.desc-producto {
+    background-color: #f7f7f7;
+}
+
+.carrito-hijo {
+    display: flex;
+    
+}
+
+.div-inferior-1 { 
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+
+/* IZQUIERDO */
+
+.div-inferior-2 {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+
+.boton-modal {
+    position: relative;
+    background-color: var(--color-blanco);
+    font-weight: bold;
+    display: flex;
+    border-radius: 0px;
+    animation-duration: 500ms;
+    animation-delay: 1ms;
+    animation: movimiento-img  5s infinite alternate;
+    border: 0px;
+}
+
+.boton-modal:hover {
+    background-color: #00ff00;
+    border-radius: 10px;
+}
+
+/*Modal carro de compras*/
+
+.modal {
+    color: var(--color-negro);
+    border: 1px solid var(--color-negro);
+    border-radius: 10px;
+   
+}
+.modal-content {
+    animation-delay: 1ms;
+    animation: border-modal  5s infinite alternate;
+
+}
+
+.modal-header {
+    position: relative;
+    background-color: #000000;
+    color: var(--color-blanco);
+    text-shadow: 0px 0px 10px var(--tercer-color-empresa);
+    font-weight: bold;
+    
+}
+
+@keyframes border-modal {
+0% {
+    border-color: var(--color-negro);
+    
+}
+50% {
+    border: 1px solid var(--tercer-color-empresa);
+}
+100% {
+    border-color: var(--color-negro);
+
+}
+}
+
+.modal-title {
+    position: relative;
+    background-color:#020b02;
+    border: 2px solid #031303 ;
+    left: 30px;
+    border-radius: 10px;
+}
+
+.modal-footer {
+background-color: #d2d4d2;
+}
+
+.boton-salir-modal {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border-color: var(--color-rojo);
+    border: 0px;
+
+}
+
+.boton-salir-modal:hover {
+    background-color: #c42d2d;
+    border-color: #f33c3c;
+}
+
+.boton-ir-carro-modal {
+    background-color: var(--tercer-color-empresa);
+    font-weight: bold;
+    color: var(--color-negro);
+    text-decoration: none;
+}
+
+.boton-ir-carro-modal:hover {
+    background-color: #24b324;
+    color: var(--color-negro);
+}
+
+@keyframes movimiento-img {
+    0% {
+    }
+    50% {
+
+    }
+    100% {
+
+    }
+}
+
+.btn-sumaa {
+    font-size: 23px;
+    border: 1px solid var(--color-negro);
+    color: #26c026;
+
+}
+
+.btn-sumaa:active {
+    background-color: var(--tercer-color-empresa);
+    color: var(--color-negro);
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-restaa {
+    font-size: 23px;
+    border: 1px solid var(--color-negro);
+    color: #d7231d;
+}
+
+.btn-restaa:active {
+    background-color: #ff0800;
+    color: var(--color-negro);
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+   
+}
+
+/* MODAL CARRITO */
+
+.img-carrito {
+    width: 210px;
+    height: 210px;
+    left: 100px;
+}

@@ -1,0 +1,144 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOSERA CARRO SERA DETALLE </title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/carrito4.css' %}">
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg col-12">
+    <div class="container-fluid">
+        <img class = "logo ms-2 me-2" src="{% static 'images/logo-empresa.webp '%}" alt="...">
+        <a class="navbar-brand p-3 ms-3" href="{% url 'index.html' %}">Pc max</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <!--Links-->
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'Registro_cliente' %}">Registro</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="">Carro</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'raw_product_list' %}">Productos</a>
+            </li>
+
+            
+            <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle mx-2 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+
+    </div>
+</nav>
+    
+<section class="col-11  mx-auto my-5">
+    <div class="carrito-padre">
+        <div class="div-img col-5 ">
+            <img src="{{ Product.image.url }}" class="col-12 card-img-detalle zoom" alt="{{ Product.name }}">
+        </div>
+        <div class="col-7">
+            <div class="titulo">
+                <h6 class = "nombre-producto">{{ Product.name }}</h6>
+                <p class = "desc-producto px-3 py-4">{{ Product.description }}</p>
+            </div>
+            <!--DIV IZQUIERDO -->
+            <div class=" col-12 carrito-hijo mt-auto">
+                <div class="div-inferior-1 col-6 ">
+                    <h2 class="text-center">Envio rapido</h2>
+                    <div class="position-relative mt-5 pt-5">
+                        <img src="{% static './images/icono-contacto.png '%}" class=" position-relative top-100 start-50 translate-middle " alt="...">
+                    </div>
+        
+                </div>
+            <!--DIV DERECHO -->
+
+                <div class="div-inferior-2 col-6  ">
+                    <div class ="col-12">
+                        <h4 class="precio-producto text-center">Precio: ${{ Product.price }}</h4>
+                    </div>
+
+                    <div class ="col-12 ">
+                        <h6 class="text-center">Solo puedes obtener un maximo de 5 productos</h6>
+                        <h6 class = "text-center">Count</h6>
+                        <!--CANTIDAD DE PRODUCTO DEL CARRO-->
+                        <div class="text-center texto-stock" id="cantidad-producto">1</div>
+                        <div class="boton-suma-resta mx-auto col-5 row my-2">
+                            <button class="col-6 mx-auto py-2 my-2 btn-sumaa" id="btn-suma" >+</button>
+                            <button class="col-6 me-auto py-2 my-2 btn-restaa"  id="btn-resta" >-</button>
+                        </div>
+                        
+                        <!-- final -->
+
+                    <!-- Button trigger modal -->
+                    <button id= "id-agregar-al-carro" type="button" class="btn boton-modal mx-auto mb-3 p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Agregar al carro
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title   p-3 mx-auto" id="exampleModalLabel ">Mi carro de compras</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                                <div class="col-6 mx-auto ">
+                                    <img src="{{ Product.image.url }}" class="col-12 img-carrito my-3 mx-auto" alt="{{ Product.name }}">
+                                </div>
+                                    <h6 class = "nombre-producto text-center">{{ Product.name }}</h6>
+                                    <p class = "desc-producto px-3 py-4">{{ Product.description }}</p>
+                                    <p>Stock:</p>
+                                <div class="text-center" id="cantidad-producto-final"></div>
+
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="boton-salir-modal px-4 py-2" data-bs-dismiss="modal">Salir</button>
+                            <a type="button" class="boton-ir-carro-modal  px-4 py-2">Ir al carro</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- FIN DEL MODAL -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+
+
+<script src="{% static 'js/stock.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>
+

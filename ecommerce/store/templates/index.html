@@ -1,0 +1,300 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Fonts  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    
+    <title>Pc max</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="icon" href="./images/logo-empresa.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styleio.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg col-12">
+    <div class="container-fluid">
+        <img class = "logo ms-2 me-2" src="{% static 'images/logo-empresa.webp '%}" alt="...">
+        <a class="navbar-brand p-3 ms-3" href="{% url 'index.html' %}">Pc max</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <!--Links-->
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'Registro_cliente' %}">Registro</a>
+            </li>
+
+            <li class="nav-item ">
+                <h6>a</h6>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'raw_product_list' %}">Productos</a>
+            </li>
+
+            
+            <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle mx-2 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- CARRUSEL -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner ">
+        <div class="carousel-item active">
+        <img src=" {% static './images/HERO-OFICIAL.jpg '%}" class="img-carrusel-carousel d-block w-100" alt="...">
+        <div class="carousel-caption  col-4 me-auto ">
+            <h1>Todo en tecnologia</h1>
+            <p class="parrafo-carrusel">Busca y compra nuestros productos tecnologicos de ultima generacion 100% seguro con envio a todo el mundo</p>
+        </div>
+        </div>
+        
+    </div>
+</div>
+
+<!--<section class = "col-11 mx-auto my-5">
+    <div>
+        <img src="{% static './images/geforce-rtx-3090-worlds-first-8k-gaming-gpu.jpg '%}" class="col-12 img-anuncio" alt="...">
+    </div>
+</section>-->
+
+
+<!-- Categorias -->
+<section class="Categoria-padre my-5 col-11 mx-auto ">
+    <div>
+        <h2 class = "titulo text-center py-5 ">Categorías</h2>
+        <h4 class = "sub-titulo text-center ">¡Los mejores productos del mercado al mejor precio y calidad!</h4>
+    </div>
+    <!--Categoria 1-->
+        <div class = "Categoria-hijo ">
+            <a class = "card-title-a col-12 col-sm-12 col-md-12 col-lg-4" href="{% url 'product_list' %}?categoria=Laptop">
+                    <div class="card-categoria ">
+                        <img src="{% static './images/categoria-laptop.jpg '%}" class="col-12 card-img-categoria" alt="...">
+                            <h2 class="card-title-categoria position-absolute top-50 start-50 translate-middle">Laptops gamer</h2>
+                    </div>
+            </a> 
+
+        
+        <!--Categoria 2-->
+            <a class = "card-title-a col-12 col-sm-12 col-md-12 col-lg-4" href="{% url 'product_list' %}?categoria=PC">
+                    <div class="card-categoria ">
+                        <img src="{% static './images/HERO-OFICIAL.jpg '%}" class="col-12 card-img-categoria" alt="...">
+                        <h2 class="card-title-categoria position-absolute top-50 start-50 translate-middle">PC de escritorio</h2>
+                    </div>
+            </a> 
+        
+        <!--Categoria 3-->
+            <a class = "card-title-a col-12 col-sm-12 col-md-12 col-lg-4" href="{% url 'product_list' %}?categoria=Celular">
+                    <div class="card-categoria ">
+                        <img src="{% static './images/categoria-celularees.webp '%}" class="col-12 card-img-categoria categoria-celular" alt="...">
+                        <h2 class="card-title-categoria position-absolute top-50 start-50 translate-middle">Celulares</h2>
+                    </div>
+            </a> 
+            
+        </div>
+</section>
+
+<hr class="col-10 mx-auto mb-5">
+
+<!-- Te garantizamos-->
+<section class = "mx-auto col-11 row">
+    <div>
+        <h2 class = "titulo text-center py-5 ">Te garantizamos</h2>
+    </div>
+    <!--   col-10 col-sm-8 col-md-6 col-lg-5  -->
+        <div class = "garantizamos-hijo row">
+            <div class="garantizamos-div-1  col-12 col-sm-12 col-md-12 col-lg-6 ">
+                <h2 class="titulo-garantizamos text-center py-2 ">Envios seguros</h2>
+                <p class="mx-2 mt-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ut tenetur, ratione suscipit voluptas ab accusamus labore commodi, exercitationem minus, dolore consequatur omnis cum rem eum dolor sapiente aperiam id?</p>
+                <div class="position-relative mt-5 pt-5">
+                    <img src="{% static './images/icono-envio-seguro.png '%}" class="img-garantizamos position-relative top-100 start-50 translate-middle " alt="...">
+                </div>
+
+            </div>
+            <div class="garantizamos-div-1 col-12 col-sm-12 col-md-12 col-lg-6 ">
+                <h2 class="titulo-garantizamos text-center py-2 ">Calidad</h2>
+                <p class="mx-2 mt-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ut tenetur, ratione suscipit voluptas ab accusamus labore commodi, exercitationem minus, dolore consequatur omnis cum rem eum dolor sapiente aperiam id?</p>
+                <div class="position-relative mt-5 pt-5">
+                    <img src="{% static './images/icono-contacto.png '%}" class="img-garantizamos position-relative top-100 start-50 translate-middle " alt="...">
+                </div>
+
+            </div>
+            <div class="garantizamos-div-1 col-12 col-sm-12 col-md-12 col-lg-12 ">
+                <h2 class="titulo-garantizamos text-center py-2 ">Contacto</h2>
+                <p class="mx-2 mt-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ut tenetur, ratione suscipit voluptas ab accusamus labore commodi, exercitationem minus, dolore consequatur omnis cum rem eum dolor sapiente aperiam id?</p>
+                <div class="position-relative mt-5 pt-5">
+                    <img src="{% static './images/icono-soporte.png '%}" class="img-garantizamos position-relative top-100 start-50 translate-middle " alt="...">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="col-10 mx-auto my-5">
+
+
+
+<!--    SECCION PRESENTACION PEQUENA        -->
+<section class="presentacion-padre col-11 mx-auto my-5">
+    <div class = "presentacion-hijo">
+        <div class="col-7">
+            <h6 class="titulo-prensentacion text-center py-5">¿Quiénes somos?</h6>
+            <div class="p-3">
+                <p>Como empresa "PC max", nos posicionamos entre las 10 mejores a nivel nacional, reconocidos por nuestro excelente servicio y respaldados por nuestros clientes, quienes están agradecidos gracias a nuestros envíos rápidos y seguro en todo el pais.</p>
+                <p>Nos dedicamos a la venta de productos tecnológicos de la mejor calidad posible, desde piezas de computadoras, PC de escritorio, laptops, celulares y productos de todo tipo.</p>
+                <p>Estamos en la búsqueda de expandirnos a nivel internacional y ofrecer nuevos productos de alta gama, manteniendo nuestro compromiso de brindar el mejor servicio para ustedes.</p>
+            </div>
+        </div>
+        
+        <div class="col-5">
+            <img src="{% static './images/imagen-empresa.jpg '%}" class="col-12 card-img-presentacion " alt="...">
+        </div>
+    </div>
+</section>
+
+
+<a href="{% url 'Registro_cliente' %}">registro</a>
+
+<!--    SECCION LISTA DE PRODUCTOS EN TENDENCIAS DEL MES        -->
+<!--<section class = "producto-tendencia-padre my-5">
+        <div >
+            <h2 class = "titulo text-center py-2">Productos mas comprados del mes [mes]</h2>
+        </div>
+    
+        <div class="productos-hijo mx-5 my-5 py-3 " >
+            
+            <div class = "tendencia-producto col-3 p-3 mx-auto text-center ">
+                
+                <img class = "img-producto col-6" src="./images/img-oferta 2.webp" alt="">
+        
+                <div class = "detalle-tendencia col-9 mx-auto mt-3">
+                    <h5 class ="pt-2">TITULO </h5>
+                    <H6 class="py-2">PRECIO: $1000</H6>
+                </div>
+                <button class="boton-diseno-1 col-5 mx-auto">Ver Producto</button>
+                
+            </div>
+
+            <div class = "tendencia-producto col-3 p-3 mx-auto text-center ">
+                
+                <img class = "img-producto col-6" src="./images/img-oferta-3.png" alt="">
+        
+                <div class = "detalle-tendencia col-9 mx-auto mt-3">
+                    <h5 class ="pt-2">TITULO </h5>
+                    <H6 class="py-2">PRECIO: $1000</H6>
+                </div>
+                <button class="boton-diseno-1 col-5 mx-auto">Ver Producto</button>
+                
+            </div>
+            
+            
+
+            <div class = "tendencia-producto col-3 p-3 mx-auto text-center ">
+                
+                <img class = "img-producto col-6" src="./images/img-oferta.webp" alt="">
+        
+                <div class = "detalle-tendencia col-9 mx-auto mt-3">
+                    <h5 class ="pt-2">TITULO </h5>
+                    <H6 class="py-2">PRECIO: $1000</H6>
+                </div>
+                <button class="boton-diseno-1 col-5 mx-auto">Ver Producto</button>
+                
+            </div>
+
+            <div class = "tendencia-producto col-3 p-3 mx-auto text-center ">
+                
+                <img class = "img-producto col-6" src="./images/img-oferta 2.webp" alt="">
+        
+                <div class = "detalle-tendencia col-9 mx-auto mt-3">
+                    <h5 class ="pt-2">TITULO </h5>
+                    <H6 class="py-2">PRECIO: $1000</H6>
+                </div>
+                <button class="boton-diseno-1 col-5 mx-auto">Ver Producto</button>
+                
+            </div>
+            
+        </div>
+        
+        
+</section> -->
+
+
+<!-- FOOTER  -->
+    <footer class = "col-12 mt-5">
+        <div class="div-footer ">
+            <div class = "col-3 ms-auto my-5">
+                    <h4 class = "">Contáctanos</h4>
+                    <div class="col-6 hr-decoracion mb-5"></div>
+                        <h6>Servicio al cliente 1</h6>
+                        <img class ="img-wsp-footer" src="{% static './images/whatsapp.png '%}" alt="">
+                        <p class="nro-wsp"> +56 982029193</p>
+                        <h6>Servicio al cliente 2</h6>
+                        <img class ="img-wsp-footer" src="{% static './images/whatsapp.png '%}" alt="">
+                        <p class="nro-wsp">+56 933669775</p>
+                        <h6>Envianos un correo por</h6>
+                        <p>br.casas@duocuc.cl</p>
+                        
+                    <p>Siguenos en:</p>
+                    <a class="hover-redes-footer px-1 py-2" href="https://wa.me/56933668775">
+                        <img class="img-redes-footer "  src="{% static './images/whatsapp.png '%}" alt="">
+                    </a>
+                    <a class="hover-redes-footer px-1 py-2" href="https://www.instagram.com/brandonluis_1/">
+                        <img class="img-redes-footer " src="{% static './images/instagram.png'%}" alt="">
+                    </a>
+                    <a class="hover-redes-footer px-1 py-2" href="https://www.facebook.com/plazadelatecnologia?locale=es_LA">
+                        <img class="img-redes-footer "  src="{% static './images/icons-facebook.png '%}" alt="">
+                    </a>
+            </div>
+            <div class = "col-3 mx-auto my-5" >
+                <h4>Ayuda</h4>
+                <div class="col-6 hr-decoracion mb-5"></div>
+                <p>Como esta mi envio</p>
+                <p>Servicio</p>
+                <p>Otros servicios</p>
+                <p>Preguntas frecuentes</p>
+            </div>
+
+            <div class = "col-3 ms-1 my-5" >
+                <h4>Acerca de nosotros</h4>
+                <div class="col-6 hr-decoracion mb-5"></div>
+                <p>Conoce nuestra historia</p>
+                <p>Politicas y privacidad</p>
+            </div>
+            
+        </div>
+        <div class ="col-10 mx-auto text-center">
+            <h6 class = " py-5">Copyright © 2024 Todos los derechos reservados por la empresa y las politicas necesarias para conformar nuestro sitio web. esta prohibido la copia de esta pagina web segun la ley 17336.</h6>    
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

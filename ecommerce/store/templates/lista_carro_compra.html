@@ -1,0 +1,97 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOSERA CARRO SERA DETALLE </title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/carrito4.css' %}">
+</head>
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg col-12">
+    <div class="container-fluid">
+        <img class = "logo ms-2 me-2" src="{% static 'images/logo-empresa.webp '%}" alt="...">
+        <a class="navbar-brand p-3 ms-3" href="{% url 'index.html' %}">Pc max</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <!--Links-->
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'Registro_cliente' %}">Registro</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="">Carro</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a class="nav-link mx-2 p-3" href="{% url 'raw_product_list' %}">Productos</a>
+            </li>
+
+            
+            <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle mx-2 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+        </ul>
+        </div>
+
+    </div>
+</nav>
+    
+<section class="col-11  mx-auto my-5">
+    <div class = "container mt-5 mb-5">
+        <h2  class = "titulo my-2 p-2 text-center">Productos del carrro</h2>
+
+        <div class = "table-responsive">
+            <table class = "table  align-middle">
+                <thead class = "table-color">
+                    <tr>
+                        <th scope = "col">Nombre</th>
+                        <th scope = "col">Email</th>
+                        <th scope = "col">Mensaje</th>
+                        <th scope = "col" class = "text-center">Eliminar del carro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr class = "text-light">
+                        <td>{{ product.nombre }}</td>
+                        <td>{{ product.email }}</td>
+                        <td>{{ product.mensaje }}</td>
+                        <td class = "text-center">
+                            <form method="POST" action="{% url 'contacto_eliminar' contacto.pk %}" style = "display: inline;">
+                                {% csrf_token %}
+                                <button type="submit" class = "btn boton-2 btn-sm m-1 ">Eliminar</button>
+                            </form>  
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/stock.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>

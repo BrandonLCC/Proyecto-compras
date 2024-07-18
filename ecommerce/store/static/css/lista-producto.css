@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Radio Canada Big", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+:root {
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+    --fondo-div-padres: #cfcfcf;
+    --titulo: #44a5f5;
+    --primer-color-empresa: rgb(1, 7, 3);
+    --tercer-color-empresa: #00ff00;
+    --text-shadow-1:#00ff00;
+}
+
+
+.logo {
+    width: 65px;
+    border-radius: 100%;
+    
+}
+
+/* NAVBAR       */
+.navbar {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+.navbar:hover {
+    background-color: #020b02;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--color-blanco);
+    text-align: center;
+}
+
+.navbar-brand:hover , .nav-link:hover {
+    background-color: #031003;
+    text-shadow: 5px 5px 5px 5px var(--text-shadow-1);
+    color: var(--tercer-color-empresa);
+    border-radius: 10px;
+}
+
+
+
+/* card y seccion oferta */
+
+.card-group {
+    margin-top: 10px;
+    border: 1px solid var(--color-negro);
+}
+.card {
+    border: 1px solid var(--color-negro);
+    border-radius: 0px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    animation-duration: 500ms;
+}
+
+.card-img-top {
+    width: 300px;
+    height: 300px;
+}
+
+.card-title {
+    background-color: var(--color-blanco);
+    font-weight: bold;
+    color: var(--color-negro);
+    animation-delay: 1ms;
+    animation: movimiento-img  5s infinite alternate;
+}
+
+@keyframes movimiento-img {
+    0% {
+        background-color: #00ff00;
+    }
+    50% {
+        background-color: #ffffff;
+    }
+    100% {
+        background-color: #ffffff;
+
+    }
+}
+
+.card-body {
+    background-color: #000000;
+    color: var(--color-blanco);
+}
+
+.card-text-1 {
+    background-color: #050705;
+    height: 200px;
+    padding: 10px;
+    
+}
+
+.card-text-2 {
+    background-color: #041b04;
+    color: var(--tercer-color-empresa);
+    padding: 10px;
+}
+
+.card-text-3 {
+    position: relative;
+    background-color: var(--color-blanco);
+    color:var(--color-negro);
+    font-weight: bold;
+    text-align: center;
+    animation-delay: 1ms;
+    animation-iteration-count: infinite;
+    animation: animacion-stock  3s infinite;
+
+}
+
+@keyframes animacion-stock {
+0% {
+    color:#000000;
+}
+50% {
+    color:#ff0000;
+    
+}
+100% {
+}
+}
+
+.titulo {
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    background: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 20px;
+    font-size:40px;
+    margin: 0;
+
+}
+
+.sub-titulo {
+    background-color: #3cf33c;
+    border: 2px solid var(--color-negro);
+    color: var(--color-negro);
+    margin: 0;
+    padding: 5PX;
+}
+
+/* BOTONES */
+
+.boton-diseno-1 {
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+
+/*¨FOOTER */
+footer {
+    background-color: #0a0a0a;
+    color: var(--color-blanco);
+}
+
+.img-wsp-footer {
+    position: absolute;
+    display: flex;
+}
+
+.nro-wsp {
+    position: relative;
+    left: 30px;
+    top: 1px;
+}
+
+.hr-footer {
+    display: flex;
+    height: 4px;
+    color: #ffffff;
+}
+
+.div-footer {
+    display: flex;
+}
+
+.hover-redes-footer:hover {
+    position: relative;
+    background-color: #1a1818;
+    border-radius: 100%;
+    transform: translateY(-3px);
+    animation-duration: 500ms;
+}
+
+.img-redes-footer {
+    position: relative;
+    left: 1px;
+}
+
+.hr-decoracion {
+    height: 2px;
+    border: 3px solid var(--color-blanco);
+}
+
+.boton-producto {
+    background-color: var(--tercer-color-empresa);
+    font-weight: bold;
+    color: var(--color-negro);
+    text-decoration: none;
+}
+
+.boton-producto:hover {
+    background-color: #24b324;
+    color: var(--color-negro);
+}
