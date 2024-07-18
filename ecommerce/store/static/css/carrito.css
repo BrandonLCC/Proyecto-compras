@@ -59,6 +59,10 @@
     background-color: beige;
     overflow: hidden;
     display: flex;
+    height: 100%;
+    border: 2px solid var(--fondo-div-padres);
+    border-top-left-radius: 10px ;
+    border-bottom-left-radius: 10px;
 }
 .zoom {
     position: relative;
@@ -72,6 +76,8 @@
 
 }
 
+
+
 /*LADO DERECHO*/
 .nombre-producto {
     border-top-right-radius: 10px; 
@@ -80,6 +86,7 @@
     font-weight: bold;
     margin: 0;
     padding: 5px;
+    text-align: center;
     
 }
 
@@ -93,7 +100,6 @@
 }
 
 .div-inferior-1 { 
-    background-color: #f7f7f7;
     margin: 0;
 }
 
@@ -129,7 +135,6 @@
     color: var(--color-negro);
     border: 1px solid var(--color-negro);
     border-radius: 10px;
-   
 }
 .modal-content {
     animation-delay: 1ms;
@@ -170,6 +175,7 @@
 
 .modal-footer {
 background-color: #d2d4d2;
+
 }
 
 .boton-salir-modal {
@@ -242,4 +248,38 @@ background-color: #d2d4d2;
     width: 210px;
     height: 210px;
     left: 100px;
+}
+
+.texto-envio {
+    font-weight: bold;
+
+}
+
+.precio-producto {
+    background-color: var(--tercer-color-empresa);
+    color: var(--color-negro);
+    font-weight: bold;
+
+}
+
+.margin-producto {
+    border-top: 2px solid var(--fondo-div-padres);
+    border-right: 2px solid var(--fondo-div-padres);
+    border-bottom: 2px solid var(--fondo-div-padres);
+
+    border-top-right-radius: 10px ;
+    border-bottom-right-radius: 10px;
+}
+
+.nombre-producto-modal {
+    border-top-right-radius: 10px; 
+    border-top-left-radius: 10px; 
+
+    background: var(--color-negro);
+    color: var(--color-blanco);
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    
 }

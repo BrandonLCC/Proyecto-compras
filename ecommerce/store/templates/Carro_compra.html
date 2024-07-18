@@ -10,7 +10,7 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'css/carrito4.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
 </head>
 <body>
 
@@ -61,15 +61,15 @@
         <div class="div-img col-5 ">
             <img src="{{ Product.image.url }}" class="col-12 card-img-detalle zoom" alt="{{ Product.name }}">
         </div>
-        <div class="col-7">
+        <div class="margin-producto col-7">
             <div class="titulo">
-                <h6 class = "nombre-producto">{{ Product.name }}</h6>
-                <p class = "desc-producto px-3 py-4">{{ Product.description }}</p>
+                <h6 class = "nombre-producto py-3 ">{{ Product.name }}</h6>
+                <p class = "desc-producto px-3 py-5 text-center">{{ Product.description }}</p>
             </div>
             <!--DIV IZQUIERDO -->
-            <div class=" col-12 carrito-hijo mt-auto">
+            <div class=" col-12 carrito-hijo  ">
                 <div class="div-inferior-1 col-6 ">
-                    <h2 class="text-center">Envio rapido</h2>
+                    <h2 class="text-center texto-envio">Envio rapido</h2>
                     <div class="position-relative mt-5 pt-5">
                         <img src="{% static './images/icono-contacto.png '%}" class=" position-relative top-100 start-50 translate-middle " alt="...">
                     </div>
@@ -79,12 +79,12 @@
 
                 <div class="div-inferior-2 col-6  ">
                     <div class ="col-12">
-                        <h4 class="precio-producto text-center">Precio: ${{ Product.price }}</h4>
+                        <h4 class="precio-producto text-center py-4">Precio: ${{ Product.price }}</h4>
                     </div>
 
                     <div class ="col-12 ">
                         <h6 class="text-center">Solo puedes obtener un maximo de 5 productos</h6>
-                        <h6 class = "text-center">Count</h6>
+                        <h6 class = "text-center">Stock</h6>
                         <!--CANTIDAD DE PRODUCTO DEL CARRO-->
                         <div class="text-center texto-stock" id="cantidad-producto">1</div>
                         <div class="boton-suma-resta mx-auto col-5 row my-2">
@@ -111,9 +111,9 @@
                                 <div class="col-6 mx-auto ">
                                     <img src="{{ Product.image.url }}" class="col-12 img-carrito my-3 mx-auto" alt="{{ Product.name }}">
                                 </div>
-                                    <h6 class = "nombre-producto text-center">{{ Product.name }}</h6>
+                                    <h6 class = "nombre-producto-modal text-center">{{ Product.name }}</h6>
                                     <p class = "desc-producto px-3 py-4">{{ Product.description }}</p>
-                                    <p>Stock:</p>
+                                    <p class="text-center"><b>Stock:</b></p>    
                                 <div class="text-center" id="cantidad-producto-final"></div>
 
                             </div>
