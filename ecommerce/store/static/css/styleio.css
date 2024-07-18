@@ -27,6 +27,7 @@
 .navbar {
     background-color: var(--color-negro);
     color: var(--color-blanco);
+    z-index: 3;
 }
 
 .navbar:hover {
@@ -202,8 +203,6 @@ h1 {
     border-bottom-right-radius: 10px;
     height: 100%;
 }
-
-
 
 
 .certificacion-presentacion {

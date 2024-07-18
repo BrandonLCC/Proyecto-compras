@@ -38,8 +38,9 @@
             </li>
 
             <li class="nav-item ">
-                <h6>a</h6>
+                <a class="nav-link mx-2 p-3" href="{% url 'inicio_sesion.html' %}">Iniciar sesion</a>
             </li>
+
             
             <li class="nav-item ">
                 <a class="nav-link mx-2 p-3" href="{% url 'raw_product_list' %}">Productos</a>
@@ -47,16 +48,15 @@
 
             
             <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle mx-2 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-            </li>
+                <a class="nav-link dropdown-toggle mx-2 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item text-center" href="{% url 'product_list' %}?categoria=PC">PC de escritorio</a></li>
+                    <li><a class="dropdown-item text-center" href="{% url 'product_list' %}?categoria=Laptop">Laptop gamer</a></li>
+                    <li><a class="dropdown-item text-center" href="{% url 'product_list' %}?categoria=Celular">Celulares</a></li>
+                </ul>
+                </li>
         </ul>
         </div>
 
