@@ -8,7 +8,7 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'css/registro2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
 </head>
 <body>
 
@@ -22,6 +22,8 @@
                 <h3 class="mensaje-login ">¡Te damos la bienvenida!</h3>
                 <p class="mensaje-login-2  ">Acceda por aquí si ya se ha registrado.</p>
                 <a class  ="boton-login  px-5" href="{% url 'inicio_sesion.html' %}">Inicio sesion</a>
+                <a class  ="boton-home  px-5" href="{% url 'index.html' %}">home</a>
+
         </div>
         <!--DIV 2-->
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
